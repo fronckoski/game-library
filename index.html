@@ -1,0 +1,171 @@
+<html>
+    <body>
+        <style>
+            html, body {
+                height: 100%
+            }
+            .top-bar-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .top-bar-item {
+                display: flex;
+                justify-content: center;
+            }
+            #add-game-container {
+                justify-content: flex-end;
+                padding-right: 50px;
+            }
+            #add-game-button {
+                color: white;
+                background: green;
+                border-color: green;
+                border-radius: 10px;
+                width: 104.433;
+                height: 75.75;
+            }
+            #greeting {
+                font-size: 50px;
+                padding: 25px;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border-style: solid;
+                border-radius: 25px;
+                color: white;
+                border-color: black;
+                background-color: cornflowerblue;
+            }
+            .container {
+                height: 100%;
+                border-style: solid;
+                border-width: 5px;
+                border-color: black;
+                border-radius: 15px;
+                background-image: url("Gradient2.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .games-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 10px;
+                padding: 15px;
+                padding-left: 65px;
+            }
+            .game-content {
+                font-size: 20px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: white; 
+                background-color: cornflowerblue;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 250px;
+                width: 230px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border-radius: 10px;
+                border: black;
+                border-style: solid;
+                border-width: 3px;
+            }
+            .played-button {
+                color: white;
+                background: green;
+                border-color: green;
+                border-radius: 10px;
+                width: 104.433;
+                height: 40.75;
+            }
+            .not-played-button {
+                color: white;
+                background: red;
+                border-color: red;
+                border-radius: 10px;
+                width: 104.433;
+                height: 40.75;
+            }
+
+
+            .form-popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                /* bring your own prefixes */
+                transform: translate(-50%, -50%);
+                border: 3px solid black;
+                border-radius: 10px;
+                z-index: 9;
+            }
+            .form-container {
+                max-width: 300px;
+                padding: 10px;
+                background-color: cornflowerblue;
+                color: white;
+                border-radius: 10px;
+            }
+            .form-container input[type=text], .form-container input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #f1f1f1;
+            }
+            .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+            .form-container .btn {
+                background-color: green;
+                color: white;
+                padding: 16px 20px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                width: 100%;
+                margin-bottom:10px;
+                opacity: 0.8;
+            }
+
+        </style>
+        <div class=container>
+            <div class=top-bar-container>
+                <div class="top-bar-item">
+                    <p id=greeting>Your Library</p>
+                </div>
+                <div class="top-bar-item" id="add-game-container">
+                    <button id="add-game-button" onclick="openForm()">Add Game +</button>
+                </div>
+            </div>
+            <div class=games-container id=main-display>
+            </div>
+        </div>
+        <div class="form-popup" id="add-game-form">
+            <form action="/action_page.php" class="form-container">
+              <h1>Add Game</h1>
+          
+              <label for="game-title"><b>Game Title</b></label>
+              <input id="formTitle" type="text" placeholder="Title" name="game-title" required>
+          
+              <label for="game-developer"><b>Developer</b></label>
+              <input id="formDeveloper" type="text" placeholder="Developer" name="game-developer" required>
+
+              <label for="game-hours"><b>Hours to Complete</b></label>
+              <input id="formHours" type="text" placeholder="Hours" name="game-hours" required>
+
+              <label for="played-status"><b>Completed?</b></label>
+              <input id="formPlayed" type="checkbox" name="played-status" value="played">
+              
+              <button id="form-add-button" type="button" class="btn" onclick="addGameViaForm()">Add</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div> 
+        <script src="game_library.js">
+
+        </script>
+    </body>
+</html>
