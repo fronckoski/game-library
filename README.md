@@ -1,4 +1,4 @@
-<h1>Library application made as an assignment during The Odin Project.</h1>
+<h1>Library application made as an assignment during The Odin Project!</h1>
 
 Things learned during this project:
 <ul>
