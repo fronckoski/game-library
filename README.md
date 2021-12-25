@@ -23,6 +23,6 @@ Things to add to this project:
     A delete icon for each library item.
   </li>
   <li>
-    Move style sheet out of the index HTML file.
+    Move style sheet out of the index HTML file, and into a .css stylesheet file.
   </li>
 </ul>
